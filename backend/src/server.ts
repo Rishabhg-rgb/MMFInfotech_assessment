@@ -8,6 +8,7 @@ import 'dotenv/config';
 import Env from './constant/env';
 import applyRoutes from './routes';
 import globalErrorHandler from './controllers/error.controller';
+import { startHealthCheckCron } from './jobs/healthCheck';
 
 // Config ENV
 const envValidationStatus = Env.validateEnv();
@@ -49,4 +50,5 @@ const PORT = Env.SERVER_PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
+  startHealthCheckCron();
 });

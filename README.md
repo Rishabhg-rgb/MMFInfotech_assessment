@@ -193,6 +193,12 @@ npm run preview
 - Table views with pagination
 - Toast notifications
 
+### System Monitoring
+
+- Health check endpoint (`/api/health`)
+- Automated health check cron job (runs every minute)
+- Server status monitoring and logging
+
 ## API Endpoints
 
 ### Authentication
@@ -212,6 +218,10 @@ npm run preview
 
 - `GET /api/v1/attendance` - Get attendance records
 - `POST /api/v1/attendance` - Mark attendance
+
+### System
+
+- `GET /api/health` - Health check endpoint
 
 ## Technologies Used
 
