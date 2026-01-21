@@ -8,13 +8,13 @@
     "seed": "ts-node-dev --respawn --transpile-only --project tsconfig.json src/dev_data/scripts/seed_data.ts",
     "start:dev": "nodemon src/server.ts",
     "dev": "ts-node-dev --respawn --transpile-only --project tsconfig.json src/server.ts",
-    "build": "rimraf ./build && tsup src/server.ts --format cjs --out-dir build --no-dts --minify --clean",
+    "build": "npm run build:tsc",
     "start:tsc": "node build/src/server.js",
     "build:tsc": "rimraf ./build && tsc",
     "format": "prettier --write ."
   },
   "keywords": [],
-  "author": "gadgetvala",
+  "author": "RishabhGoswami",
   "license": "ISC",
   "engines": {
     "npm": ">=10.9.0",
