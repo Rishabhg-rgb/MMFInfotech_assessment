@@ -5,16 +5,16 @@
   "scripts": {
     "prestart": "npm run build",
     "start": "node build/server.js",
-    "seed": "ts-node-dev --respawn --transpile-only --project tsconfig.json src/dev_data/scripts/seed_data.ts",
+    "seed": "NODE_OPTIONS='--max-old-space-size=4096' nodemon add_dummy_data.ts",
     "start:dev": "nodemon src/server.ts",
     "dev": "ts-node-dev --respawn --transpile-only --project tsconfig.json src/server.ts",
-    "build": "npm run build:tsc",
+    "build": "rimraf ./build && tsup src/server.ts --format cjs --out-dir build --no-dts --minify --clean",
     "start:tsc": "node build/src/server.js",
     "build:tsc": "rimraf ./build && tsc",
     "format": "prettier --write ."
   },
   "keywords": [],
-  "author": "RishabhGoswami",
+  "author": "gadgetvala",
   "license": "ISC",
   "engines": {
     "npm": ">=10.9.0",
@@ -62,7 +62,6 @@
     "multer-s3": "^3.0.1",
     "node-cron": "^3.0.3",
     "validator": "^13.15.0",
-    "xss": "^1.0.15",
-    "yup": "^1.7.1"
+    "xss": "^1.0.15"
   }
 }
